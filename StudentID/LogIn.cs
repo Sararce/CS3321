@@ -25,14 +25,11 @@ namespace StudentLogin
             if (users.Contains(usersbox.Text) && pass.Contains(passbox.Text) && Array.IndexOf(users.ToArray(), usersbox.Text)
                 == Array.IndexOf(pass.ToArray(), passbox.Text))
             {
-                this.Hide();
                 Student stu = new Student();
-                stu.Closed += (s, args) => this.Close();
                 stu.ShowDialog();
             }
             else
                 MessageBox.Show("Incorrect username/password");
-
         }
 
         private void LogIn_Load(object sender, EventArgs e)
